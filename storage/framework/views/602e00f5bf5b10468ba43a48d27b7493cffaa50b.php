@@ -7,7 +7,7 @@
 
         <div class="links">
             <a href="/login">Log In</a>
-            <a href="/ledgers">Ledger</a>
+            <a href="/register">Register</a>
         </div>
     </div>
 </div>

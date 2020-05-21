@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/newpersonnel', function () {
+Route::get('/register', function () {
     return view('register');
 });
 
@@ -25,6 +25,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/ledgers','LedgerController@index');
-Route::get('/ledgers/create','LedgerController@create');
-Route::post('/ledgers','LedgerController@store');
+Route::get('/ledgers','LedgerController@index')->middleware('auth');
+Route::get('/ledgers/create','LedgerController@create')->middleware('auth');
+Route::post('/ledgers','LedgerController@store')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
